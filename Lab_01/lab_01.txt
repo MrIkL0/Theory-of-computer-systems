@@ -1,6 +1,6 @@
-Microsoft Windows [Version 10.0.19045.2604]
-(c) Корпорація Майкрософт. Усі права захищені.
+5. Викачати та запустити образ hello-world
 
+5.1 Завантажую контейнер
 C:\Users\IkLo>docker pull hello-world
 Using default tag: latest
 latest: Pulling from library/hello-world
@@ -8,6 +8,9 @@ Digest: sha256:ffb13da98453e0f04d33a6eee5bb8e46ee50d08ebe17735fc0779d0349e889e9
 Status: Image is up to date for hello-world:latest
 docker.io/library/hello-world:latest
 
+
+
+5.2 Запускаю контейнер
 C:\Users\IkLo>docker run hello-world
 
 Hello from Docker!
@@ -32,10 +35,14 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 
+
+6. Команда для виведення версії
 C:\Users\IkLo>docker images hello-world
 REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 hello-world   latest    feb5d9fea6a5   18 months ago   13.3kB
 
+
+7.1 Завантажую контейнер
 C:\Users\IkLo>docker pull ellerbrock/alpine-bash-git
 Using default tag: latest
 latest: Pulling from ellerbrock/alpine-bash-git
@@ -43,13 +50,23 @@ Digest: sha256:46262050f227c4515a501607873d760961ee32d92fa5b8cf9c89aca3c564d008
 Status: Image is up to date for ellerbrock/alpine-bash-git:latest
 docker.io/ellerbrock/alpine-bash-git:latest
 
+8.Запустити у контейнері alpine-bash-git інтерфейс командного рядка, задокументувати ім’я користувача, вміст кореневого каталогу системи та версію git.
+
 C:\Users\IkLo>docker run -it --entrypoint /bin/bash ellerbrock/alpine-bash-git
+
 bash-4.4$ whoami
 download
+
+8.2 Вміст кореневого каталогу
 bash-4.4$ cd /
 bash-4.4$ ls
 bin    dev    etc    home   lib    media  mnt    proc   root   run    sbin   srv    sys    tmp    usr    var
+
+8.3 Версія git
 bash-4.4$ git --version
+
+Переходжу в зручну папку та клоную каталог
+
 bash-4.4$ cd home/
 bash-4.4$ ls
 download
@@ -63,7 +80,10 @@ remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 bash-4.4$ ls
 Theory-of-computer-systems
+
+Виходжу з контейнера
 bash-4.4$ exit
 exit
 
+Перезапуск контейнера
 C:\Users\IkLo>docker run -it --entrypoint /bin/bash ellerbrock/alpine-bash-git
