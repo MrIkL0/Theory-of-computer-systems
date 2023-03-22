@@ -1,0 +1,69 @@
+Microsoft Windows [Version 10.0.19045.2604]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\Users\IkLo>docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:ffb13da98453e0f04d33a6eee5bb8e46ee50d08ebe17735fc0779d0349e889e9
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+
+C:\Users\IkLo>docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+
+C:\Users\IkLo>docker images hello-world
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    feb5d9fea6a5   18 months ago   13.3kB
+
+C:\Users\IkLo>docker pull ellerbrock/alpine-bash-git
+Using default tag: latest
+latest: Pulling from ellerbrock/alpine-bash-git
+Digest: sha256:46262050f227c4515a501607873d760961ee32d92fa5b8cf9c89aca3c564d008
+Status: Image is up to date for ellerbrock/alpine-bash-git:latest
+docker.io/ellerbrock/alpine-bash-git:latest
+
+C:\Users\IkLo>docker run -it --entrypoint /bin/bash ellerbrock/alpine-bash-git
+bash-4.4$ whoami
+download
+bash-4.4$ cd /
+bash-4.4$ ls
+bin    dev    etc    home   lib    media  mnt    proc   root   run    sbin   srv    sys    tmp    usr    var
+bash-4.4$ git --version
+bash-4.4$ cd home/
+bash-4.4$ ls
+download
+bash-4.4$ cd download/
+bash-4.4$ git clone https://github.com/MrIkL0/Theory-of-computer-systems.git
+bash-4.4$ git clone https://github.com/MrIkL0/Theory-of-computer-systems.git
+Cloning into 'Theory-of-computer-systems'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+bash-4.4$ ls
+Theory-of-computer-systems
+bash-4.4$ exit
+exit
+
+C:\Users\IkLo>docker run -it --entrypoint /bin/bash ellerbrock/alpine-bash-git
