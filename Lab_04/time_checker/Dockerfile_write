@@ -1,0 +1,7 @@
+FROM python:latest
+
+WORKDIR /app
+
+COPY write_time.py /app
+
+CMD ["python", "write_time.py"]

@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  first_program:
+    build:
+      context: .
+      dockerfile: Dockerfile_write
+    volumes:
+      - ./data:/app/data
+
+  second_program:
+    build:
+      context: .
+      dockerfile: Dockerfile_read
+    volumes:
+      - ./data:/app/data
